@@ -1,0 +1,56 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning App</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; text-align: center; }
+        input { padding: 10px; width: 80%; margin-bottom: 20px; }
+        .subjects { display: flex; flex-wrap: wrap; justify-content: center; }
+        .card { border: 1px solid #ddd; padding: 15px; margin: 10px; width: 250px; border-radius: 5px; box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); }
+        .card a { display: block; margin-top: 10px; padding: 10px; background: blue; color: white; text-decoration: none; border-radius: 5px; }
+    </style>
+    <script>
+        function searchSubjects() {
+            let input = document.getElementById("search").value.toLowerCase();
+            let cards = document.getElementsByClassName("card");
+            for (let card of cards) {
+                let subject = card.getElementsByTagName("h3")[0].innerText.toLowerCase();
+                card.style.display = subject.includes(input) ? "block" : "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Learning App</h1>
+    <input type="text" id="search" onkeyup="searchSubjects()" placeholder="Search subjects...">
+    <div class="subjects">
+        <div class="card">
+            <h3>Mathematics</h3>
+            <p>Learn Algebra, Geometry, and more</p>
+            <a href="https://myschool.ng/classroom/mathematics" target="_blank">View Past Questions</a>
+        </div>
+        <div class="card">
+            <h3>English Language</h3>
+            <p>Improve Grammar, Vocabulary, and Writing skills</p>
+            <a href="https://myschool.ng/classroom/english-language" target="_blank">View Past Questions</a>
+        </div>
+        <div class="card">
+            <h3>Physics</h3>
+            <p>Explore Mechanics, Electricity, and more</p>
+            <a href="https://myschool.ng/classroom/physics" target="_blank">View Past Questions</a>
+        </div>
+        <div class="card">
+            <h3>Chemistry</h3>
+            <p>Understand Organic, Inorganic, and Physical Chemistry</p>
+            <a href="https://myschool.ng/classroom/chemistry" target="_blank">View Past Questions</a>
+        </div>
+        <div class="card">
+            <h3>Biology</h3>
+            <p>Study Genetics, Ecology, and Anatomy</p>
+            <a href="https://myschool.ng/classroom/biology" target="_blank">View Past Questions</a>
+        </div>
+    </div>
+</body>
+</html>

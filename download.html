@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning App</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; text-align: center; background-color: #f4f4f4; }
+        h1 { color: #333; }
+        input { padding: 10px; width: 80%; margin-bottom: 20px; border-radius: 5px; border: 1px solid #ccc; }
+        .subjects { display: flex; flex-wrap: wrap; justify-content: center; }
+        .card { background: white; border: 1px solid #ddd; padding: 15px; margin: 10px; width: 250px; border-radius: 10px; box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1); transition: transform 0.3s; }
+        .card:hover { transform: scale(1.05); }
+        .card a { display: block; margin-top: 10px; padding: 10px; background: blue; color: white; text-decoration: none; border-radius: 5px; }
+    </style>
+    <script>
+        function searchSubjects() {
+            let input = document.getElementById("search").value.toLowerCase();
+            let cards = document.getElementsByClassName("card");
+            for (let card of cards) {
+                let subject = card.getElementsByTagName("h3")[0].innerText.toLowerCase();
+                card.style.display = subject.includes(input) ? "block" : "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Learning App</h1>
+    <input type="text" id="search" onkeyup="searchSubjects()" placeholder="Search subjects...">
+    <div class="subjects">
+        <!-- Science Subjects -->
+        <div class="card">
+            <h3>Biology</h3>
+            <p>Learn about living organisms and life processes</p>
+            <a href="/mnt/data/WAEC-Biology-past-questions-OBJ.pdf" download>Download OBJ Past Questions</a>
+            <a href="/mnt/data/WAEC-BIOLOGY-theory-past-questions.pdf" download>Download Theory Past Questions</a>
+        </div>
+        <div class="card">
+            <h3>Economics</h3>
+            <p>Understand micro and macroeconomics concepts</p>
+            <a href="/mnt/data/WAEC-ECONOMICS-OBJ-past-questions.pdf" download>Download OBJ Past Questions</a>
+            <a href="/mnt/data/WAEC-ECONOMICS-Theory-past-questions.pdf" download>Download Theory Past Questions</a>
+        </div>
+        <div class="card">
+            <h3>English Language</h3>
+            <p>Improve Grammar, Vocabulary, and Writing skills</p>
+            <a href="/mnt/data/WAEC-ENGLISH-OBJ-past-questions.pdf" download>Download OBJ Past Questions</a>
+            <a href="/mnt/data/WAEC-ENGLISH-Theory-past-questions.pdf" download>Download Theory Past Questions</a>
+            <a href="/mnt/data/WAEC-ENGLISH-ORAL-past-questions.pdf" download>Download Oral Past Questions</a>
+        </div>
+        <div class="card">
+            <h3>Mathematics</h3>
+            <p>Learn Algebra, Geometry, and more</p>
+            <a href="/mnt/data/WAEC-MATHS-Theory-past-questions.pdf" download>Download Theory Past Questions</a>
+        </div>
+        <div class="card">
+            <h3>Literature</h3>
+            <p>Study prose, drama, and poetry</p>
+            <a href="/mnt/data/WAEC-Literarure-OBJ-past-questions.pdf" download>Download OBJ Past Questions</a>
+        </div>
+    </div>
+</body>
+</html>
